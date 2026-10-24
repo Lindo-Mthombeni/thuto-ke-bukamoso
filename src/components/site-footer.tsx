@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 
+import logo from "@/assets/logo.svg";
 import { BrandName } from "@/components/brand-name";
-import { Logo } from "@/components/logo";
 import { Separator } from "@/components/ui/separator";
 import { site } from "@/lib/content";
 
@@ -12,10 +13,12 @@ export function SiteFooter() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm space-y-3">
             <div className="flex items-center gap-3">
-              <Logo
+              <Image
+                src={logo}
+                alt={`${site.name} logo`}
+                width={48}
+                height={48}
                 className="size-12 shrink-0"
-                aria-label={`${site.name} logo`}
-                role="img"
               />
               <BrandName className="font-heading text-lg font-semibold tracking-tight" />
             </div>

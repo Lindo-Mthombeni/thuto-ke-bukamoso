@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
 
+import logo from "@/assets/logo.svg";
 import { BrandName } from "@/components/brand-name";
-import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { navLinks, site } from "@/lib/content";
@@ -17,10 +18,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link href="/" className="flex items-center gap-3">
-          <Logo
+          <Image
+            src={logo}
+            alt={`${site.name} logo`}
+            width={48}
+            height={48}
             className="size-12 shrink-0"
-            aria-label={`${site.name} logo`}
-            role="img"
           />
           <span className="flex flex-col leading-tight">
             <BrandName className="font-heading text-base font-semibold tracking-tight sm:text-lg" />
