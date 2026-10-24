@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true, // Required for static export if using next/image
   },
   /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
