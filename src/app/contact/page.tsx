@@ -75,7 +75,12 @@ export default function ContactPage() {
         <p className="font-heading text-2xl font-semibold text-balance sm:text-3xl">
           Small Coders, Big Dreams
         </p>
-        <Button asChild variant="secondary" size="lg">
+        <Button
+          asChild
+          variant="secondary"
+          size="lg"
+          className="bg-orange brightness-110 dark:bg-orange/90"
+        >
           <a href={site.emailHref}>
             Enrol Your Child
             <ArrowRight data-icon="inline-end" />

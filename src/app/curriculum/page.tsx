@@ -36,7 +36,7 @@ export default function CurriculumPage() {
             style={{ animationDelay: `${180 + index * 100}ms` }}
           >
             <CardHeader>
-              <span className="mb-2 flex size-11 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+              <span className="mb-2 flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <item.icon className="size-5" />
               </span>
               <CardTitle>{item.title}</CardTitle>

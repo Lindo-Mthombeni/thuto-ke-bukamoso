@@ -4,17 +4,15 @@ import {
   ArrowRight,
   CheckCircle2,
   Code2,
-  Heart,
-  Lightbulb,
+  // Heart,
+  // Lightbulb,
   Rocket,
-  Sparkles,
-  Star,
 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { HeroCodeSection } from "./hero-code-section";
 
 const highlights = ["Ages 5 – 10", "ECD Partnerships", "Individual Teaching"];
 
@@ -49,7 +47,7 @@ function LiftWord({
           >
             <span
               className={cn(
-                "inline-block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/letter:-translate-y-[0.18em] group-hover/letter:rotate-[var(--letter-tilt)] motion-reduce:transition-none motion-reduce:group-hover/letter:translate-y-0 motion-reduce:group-hover/letter:rotate-0",
+                "inline-block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/letter:translate-y-[-0.18em] group-hover/letter:rotate-(--letter-tilt) motion-reduce:transition-none motion-reduce:group-hover/letter:translate-y-0 motion-reduce:group-hover/letter:rotate-0",
                 getLetterColor(position),
               )}
             >
@@ -85,15 +83,6 @@ export function HomeHero() {
 
         <div className="relative grid items-center gap-14 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:px-14 lg:py-24">
           <div className="flex max-w-2xl flex-col items-start gap-6 text-primary-foreground">
-            <Badge
-              variant="outline"
-              className="animate-route-enter h-auto gap-1.5 rounded-full border-white/30 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
-              style={{ animationDelay: "0ms" }}
-            >
-              <Sparkles className="size-3.5" />
-              Technology Today, Opportunities Tomorrow
-            </Badge>
-
             <div
               className="animate-route-enter space-y-5"
               style={{ animationDelay: "100ms" }}
@@ -171,62 +160,9 @@ export function HomeHero() {
               className="absolute -inset-8 rounded-[3rem] bg-white/10 blur-2xl"
             />
 
-            <div className="relative rotate-1 rounded-[1.75rem] bg-white/15 p-1.5 shadow-2xl ring-1 ring-white/25 backdrop-blur-sm transition-transform duration-500 hover:rotate-0">
-              <div className="overflow-hidden rounded-[1.35rem] bg-[#0b1026]">
-                <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-                  <span className="size-2.5 rounded-full bg-red-400" />
-                  <span className="size-2.5 rounded-full bg-amber-300" />
-                  <span className="size-2.5 rounded-full bg-emerald-400" />
-                  <span className="ml-3 text-[0.65rem] tracking-wide text-white/40">
-                    my_first_program.py
-                  </span>
-                </div>
+            <HeroCodeSection />
 
-                <div className="space-y-1.5 p-5 font-mono text-xs leading-6 sm:text-sm">
-                  <p>
-                    <span className="text-fuchsia-300">name</span>
-                    <span className="text-white/50"> = </span>
-                    <span className="text-amber-200">
-                      &quot;Future Coder&quot;
-                    </span>
-                  </p>
-                  <p>
-                    <span className="text-cyan-300">print</span>
-                    <span className="text-white/50">(</span>
-                    <span className="text-amber-200">
-                      &quot;Hello, world!&quot;
-                    </span>
-                    <span className="text-white/50">)</span>
-                  </p>
-                  <p className="pt-2 text-white/35">
-                    # dream big, build bigger
-                  </p>
-                  <p>
-                    <span className="text-fuchsia-300">for</span>
-                    <span className="text-white/60"> day </span>
-                    <span className="text-fuchsia-300">in</span>
-                    <span className="text-white/60"> week:</span>
-                  </p>
-                  <p className="pl-4">
-                    <span className="text-cyan-300">learn</span>
-                    <span className="text-white/50">(</span>
-                    <span className="text-emerald-300">code</span>
-                    <span className="text-white/50">, </span>
-                    <span className="text-emerald-300">create</span>
-                    <span className="text-white/50">)</span>
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2 border-t border-white/10 bg-white/5 px-4 py-3 text-xs text-emerald-200">
-                  <span className="flex size-5 items-center justify-center rounded-full bg-emerald-400/20">
-                    <Star className="size-3" />
-                  </span>
-                  Lesson complete — badge unlocked!
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -top-5 -left-4 flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2.5 shadow-xl sm:-left-8">
+            <div className="absolute -top-5 -left-4 flex items-center gap-2 rounded-2xl bg-background px-3.5 py-2.5 shadow-xl sm:-left-8">
               <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Code2 className="size-4" />
               </span>
@@ -240,16 +176,11 @@ export function HomeHero() {
               </div>
             </div>
 
-            <div className="absolute -right-3 -bottom-2 flex items-center gap-3 rounded-2xl bg-white p-3 shadow-xl sm:-right-6">
+            <div className="absolute -right-3 -bottom-2 flex items-center gap-3 rounded-2xl bg-background p-3 shadow-xl sm:-right-6">
               <div className="flex -space-x-2.5">
-                {[Rocket, Heart, Lightbulb].map((Icon, index) => (
-                  <span
-                    key={index}
-                    className="flex size-8 items-center justify-center rounded-full border-2 border-white bg-secondary text-primary"
-                  >
-                    <Icon className="size-3.5" />
-                  </span>
-                ))}
+                <span className="flex size-8 items-center justify-center rounded-full bg-secondary text-primary">
+                  <Rocket className="size-3.5" />
+                </span>
               </div>
               <div className="leading-tight">
                 <p className="font-heading text-lg font-semibold text-foreground">
