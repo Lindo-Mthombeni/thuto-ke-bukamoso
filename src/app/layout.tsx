@@ -3,6 +3,7 @@ import { Fredoka, Noto_Sans } from "next/font/google";
 import "./globals.tailwind.css";
 
 import logo from "@/assets/logo.svg";
+import { InlineScript } from "@/components/inline-script";
 import { SiteFooter } from "@/components/site-footer";
 import { Navbar } from "@/components/navbar";
 
@@ -40,7 +41,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <InlineScript html={themeScript} />
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <Navbar />

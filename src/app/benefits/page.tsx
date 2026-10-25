@@ -17,6 +17,7 @@ export default function BenefitsPage() {
         description="Every lesson builds more than technical skill — it builds character."
       />
 
+      {/* Benefit cards */}
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {benefits.map((benefit, index) => (
           <Card
@@ -27,7 +28,7 @@ export default function BenefitsPage() {
           >
             <CardContent className="flex flex-col gap-3">
               <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <benefit.icon className="size-5" />
+                <benefit.icon className="size-5" aria-hidden />
               </span>
               <h2 className="font-heading text-base font-semibold">
                 {benefit.title}
@@ -40,17 +41,22 @@ export default function BenefitsPage() {
         ))}
       </div>
 
-      <div
+      {/* Closing call to action */}
+      <section
+        aria-labelledby="benefits-cta-heading"
         className="animate-route-enter mt-14 flex flex-col items-center gap-2 rounded-4xl bg-primary px-8 py-10 text-center text-primary-foreground"
         style={{ animationDelay: "600ms" }}
       >
-        <p className="font-heading text-2xl font-semibold text-balance sm:text-3xl">
-          “Today a learner, Tomorrow a leader!”
-        </p>
+        <h2 id="benefits-cta-heading" className="sr-only">
+          Join us in shaping the next generation of creators
+        </h2>
+        <blockquote className="font-heading text-2xl font-semibold text-balance sm:text-3xl">
+          <p>“Today a learner, Tomorrow a leader!”</p>
+        </blockquote>
         <p className="text-sm text-primary-foreground/80">
           Join us in shaping the next generation of creators.
         </p>
-      </div>
+      </section>
     </section>
   );
 }

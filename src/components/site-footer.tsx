@@ -11,6 +11,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 bg-muted/40">
       <div className="mx-auto w-full max-w-6xl px-6 py-14">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          {/* Brand summary */}
           <div className="max-w-sm space-y-3">
             <div className="flex items-center gap-3">
               <Image
@@ -27,36 +28,44 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div className="space-y-3">
-            <h2 className="font-heading text-sm font-semibold tracking-wide uppercase">
+          {/* Contact details */}
+          <section
+            aria-labelledby="footer-contact-heading"
+            className="space-y-3"
+          >
+            <h2
+              id="footer-contact-heading"
+              className="font-heading text-sm font-semibold tracking-wide uppercase"
+            >
               Contact Us
             </h2>
-            <div className="flex flex-col gap-2 text-sm">
+            <address className="flex flex-col gap-2 text-sm not-italic">
               <a
                 href={site.phoneHref}
                 className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               >
-                <Phone className="size-4 text-primary" />
+                <Phone className="size-4 text-primary" aria-hidden />
                 {site.phone}
               </a>
               <a
                 href={site.emailHref}
                 className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               >
-                <Mail className="size-4 text-primary" />
+                <Mail className="size-4 text-primary" aria-hidden />
                 {site.email}
               </a>
-            </div>
-          </div>
+            </address>
+          </section>
         </div>
 
         <Separator className="my-8" />
 
+        {/* Footer fine print */}
         <div className="flex flex-col items-center justify-between gap-3 text-center text-xs text-muted-foreground sm:flex-row sm:text-left">
           <p className="font-heading font-medium tracking-[0.15em] uppercase">
             Children • Skills • Opportunities • A Brighter Tomorrow
           </p>
-          <p>© 2026 {site.name}. All rights reserved.</p>
+          <small>© 2026 {site.name}. All rights reserved.</small>
         </div>
       </div>
     </footer>

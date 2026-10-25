@@ -42,6 +42,7 @@ export default function ContactPage() {
         description="Ready to start? Reach out and let’s build a brighter tomorrow together."
       />
 
+      {/* Contact method cards */}
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         {contactMethods.map((method, index) => (
           <Card
@@ -51,7 +52,7 @@ export default function ContactPage() {
           >
             <CardHeader>
               <span className="mb-2 flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                <method.icon className="size-6" />
+                <method.icon className="size-6" aria-hidden />
               </span>
               <CardTitle className="text-xl">{method.title}</CardTitle>
               <CardDescription>{method.description}</CardDescription>
@@ -60,7 +61,7 @@ export default function ContactPage() {
               <Button asChild variant="outline">
                 <a href={method.href}>
                   {method.value}
-                  <ArrowRight data-icon="inline-end" />
+                  <ArrowRight data-icon="inline-end" aria-hidden />
                 </a>
               </Button>
             </CardContent>
@@ -68,13 +69,18 @@ export default function ContactPage() {
         ))}
       </div>
 
-      <div
+      {/* Enrolment call to action */}
+      <section
+        aria-labelledby="contact-cta-heading"
         className="animate-route-enter mt-14 flex flex-col items-center gap-4 rounded-4xl bg-primary px-8 py-10 text-center text-primary-foreground"
         style={{ animationDelay: "450ms" }}
       >
-        <p className="font-heading text-2xl font-semibold text-balance sm:text-3xl">
+        <h2
+          id="contact-cta-heading"
+          className="font-heading text-2xl font-semibold text-balance sm:text-3xl"
+        >
           Small Coders, Big Dreams
-        </p>
+        </h2>
         <Button
           asChild
           variant="secondary"
@@ -83,10 +89,10 @@ export default function ContactPage() {
         >
           <a href={site.emailHref}>
             Enrol Your Child
-            <ArrowRight data-icon="inline-end" />
+            <ArrowRight data-icon="inline-end" aria-hidden />
           </a>
         </Button>
-      </div>
+      </section>
     </section>
   );
 }

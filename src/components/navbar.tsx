@@ -17,6 +17,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-3">
+        {/* Brand and home link */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src={logo}
@@ -33,7 +34,8 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        {/* Desktop navigation */}
+        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -48,12 +50,18 @@ export function Navbar() {
                 size="sm"
                 className="font-heading"
               >
-                <Link href={link.href}>{link.label}</Link>
+                <Link
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
               </Button>
             );
           })}
         </nav>
 
+        {/* Quick contact and theme toggle */}
         <div className="flex items-center gap-1">
           <Button
             asChild
@@ -61,7 +69,7 @@ export function Navbar() {
             className="hidden font-heading sm:inline-flex"
           >
             <a href={site.phoneHref}>
-              <Phone data-icon="inline-start" />
+              <Phone data-icon="inline-start" aria-hidden />
               Call Us
             </a>
           </Button>
@@ -69,7 +77,11 @@ export function Navbar() {
         </div>
       </div>
 
-      <nav className="flex items-center gap-1 overflow-x-auto border-t border-border/60 px-4 py-2 md:hidden">
+      {/* Mobile navigation */}
+      <nav
+        aria-label="Primary mobile"
+        className="flex items-center gap-1 overflow-x-auto border-t border-border/60 px-4 py-2 md:hidden"
+      >
         {navLinks.map((link) => {
           const isActive =
             link.href === "/"
@@ -84,7 +96,12 @@ export function Navbar() {
               size="sm"
               className="shrink-0 font-heading"
             >
-              <Link href={link.href}>{link.label}</Link>
+              <Link
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
             </Button>
           );
         })}

@@ -22,6 +22,7 @@ export default function ProgramsPage() {
         description="Flexible ways to bring digital skills to the children in your community."
       />
 
+      {/* Program offering cards */}
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         {programs.map((program, index) => (
           <Card
@@ -31,7 +32,7 @@ export default function ProgramsPage() {
           >
             <CardHeader>
               <span className="mb-2 flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                <program.icon className="size-6" />
+                <program.icon className="size-6" aria-hidden />
               </span>
               <CardTitle className="text-xl">{program.title}</CardTitle>
               <CardDescription className="text-base leading-relaxed">

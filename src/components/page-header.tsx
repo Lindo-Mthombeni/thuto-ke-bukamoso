@@ -10,7 +10,7 @@ type PageHeaderProps = {
 
 export function PageHeader({ badge, title, description }: PageHeaderProps) {
   return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+    <header className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
       <div className="animate-route-enter" style={{ animationDelay: "0ms" }}>
         <Badge variant="outline">{badge}</Badge>
       </div>
@@ -28,6 +28,6 @@ export function PageHeader({ badge, title, description }: PageHeaderProps) {
           {description}
         </p>
       ) : null}
-    </div>
+    </header>
   );
 }

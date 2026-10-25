@@ -27,6 +27,7 @@ export default function CurriculumPage() {
         description="A playful, hands-on curriculum built around curiosity and creativity."
       />
 
+      {/* Curriculum topic cards */}
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {curriculum.map((item, index) => (
           <Card
@@ -37,7 +38,7 @@ export default function CurriculumPage() {
           >
             <CardHeader>
               <span className="mb-2 flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <item.icon className="size-5" />
+                <item.icon className="size-5" aria-hidden />
               </span>
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>

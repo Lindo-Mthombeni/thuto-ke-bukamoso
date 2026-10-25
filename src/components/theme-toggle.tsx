@@ -65,8 +65,8 @@ export function ThemeToggle() {
       aria-label="Toggle color theme"
       title="Toggle color theme"
     >
-      <Sun className="hidden dark:block" aria-hidden />
-      <Moon className="block dark:hidden" aria-hidden />
+      <Sun className="block dark:hidden" aria-hidden />
+      <Moon className="hidden dark:block" aria-hidden />
     </Button>
   );
 }
