@@ -41,7 +41,8 @@ export function HeroCodeFigure() {
               <span className="text-fuchsia-300">in</span>
               <span className="text-white/60"> week:</span>
             </span>
-            <span className="block pl-4">
+            <span className="block">
+              <span className="whitespace-pre">{"    "}</span>
               <span className="text-cyan-300">learn</span>
               <span className="text-white/50">(</span>
               <span className="text-emerald-300">code</span>
